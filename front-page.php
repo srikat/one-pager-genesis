@@ -16,9 +16,8 @@ function sk_portfolio_entries() {
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 // Add custom homepage content
-add_action( 'genesis_loop', 'custom_homepage_content' );
-
-function custom_homepage_content() { ?>
+add_action( 'genesis_loop', 'one_pager_homepage_content' );
+function one_pager_homepage_content() { ?>
 
 	<section id="intro" class="parallax">
 		<article class="wrap">
@@ -58,9 +57,11 @@ function custom_homepage_content() { ?>
 
 <?php }
 
-add_action( 'genesis_before_header', 'sk_add_gototop_link' );
-function sk_add_gototop_link() {
+add_action( 'genesis_before_header', 'add_gototop_link' );
+function add_gototop_link() {
+
 	echo '<div id="top"></div>';
+
 }
 
 genesis();
