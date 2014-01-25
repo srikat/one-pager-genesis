@@ -1,16 +1,16 @@
-=== Genesis Sample Theme ===
+=== One-Pager Genesis Child Theme ===
 
-Github project link: https://github.com/copyblogger/genesis-sample
+Github project link: https://github.com/srikat/one-pager-genesis
 
 
 === Installation Instructions ===
 
-1. Upload the Genesis Sample theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well.)
+1. Upload the one-pager theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well)
 2. Go to your WordPress dashboard and select Appearance.
-3. Activate the Genesis Sample theme.
-4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking.
+3. Activate the One-Pager for Genesis theme.
+4. Visit [url here] for configuration
 
 
 === Theme Support ===
 
-Please visit http://my.studiopress.com/help/ for theme support.
+Please visit [url here] for theme support.
