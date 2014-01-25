@@ -19,6 +19,7 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'one_pager_homepage_content' );
 function one_pager_homepage_content() { ?>
 
+	<!-- Intro section -->
 	<section id="intro" class="parallax">
 		<article class="wrap">
 			<h2>Welcome</h2>
@@ -26,6 +27,7 @@ function one_pager_homepage_content() { ?>
 		</article>
 	</section>
 
+	<!-- Portfolio section -->
 	<section id="portfolio" class="parallax">
 		<article class="wrap">
 			<h2>Our Portfolio</h2>
@@ -33,6 +35,7 @@ function one_pager_homepage_content() { ?>
 		</article>
 	</section>
 
+	<!-- About section -->
 	<section id="about" class="parallax">
 		<article class="wrap">
 			<h2>About Section</h2>
@@ -48,6 +51,7 @@ function one_pager_homepage_content() { ?>
 		</article>
 	</section>
 
+	<!-- Contact section -->
 	<section id="contact" class="parallax">
 		<article class="wrap">
 			<h2>Contact Us</h2>
@@ -57,8 +61,8 @@ function one_pager_homepage_content() { ?>
 
 <?php }
 
-add_action( 'genesis_before_header', 'add_gototop_link' );
-function add_gototop_link() {
+add_action( 'genesis_before_header', 'add_gototop_target' );
+function add_gototop_target() {
 
 	echo '<div id="top"></div>';
 
