@@ -2,7 +2,7 @@
 
 Live Demo: http://websitesetuppro.com/demos/one-pager-genesis/
 
-Blog Post: http://sridharkatakam.com/announcing-one-pager-a-one-page-parallax-website-child-theme-for-genesis/
+Blog Post: http://sridharkatakam.com/announcing-one-pager-one-page-parallax-website-child-theme-genesis/
 
 
 === Installation Instructions ===
