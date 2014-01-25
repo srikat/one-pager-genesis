@@ -19,11 +19,15 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'one_pager_homepage_content' );
 function one_pager_homepage_content() { ?>
 
-	<!-- Intro section -->
-	<section id="intro" class="parallax">
+	<!-- Welcome section -->
+	<section id="welcome" class="parallax">
 		<article class="wrap">
-			<h2>Welcome</h2>
-			<p>This is the single page demo site to accompany my upcoming "How to set up a Single-Page website with Parallax and animation effects in Genesis" tutorial. Even though the <em>front-page.php</em> template file is <a href="http://sridharkatakam.com/go/genesis/">Genesis</a> specific, the overall idea is the same and can be applied in any WordPress theme.</p>
+			<?php
+				genesis_widget_area( 'welcome-section', array(
+				'before'	=> '<div class="welcome-section widget-area">',
+				'after'		=> '</div>',
+				) );
+			?>
 		</article>
 	</section>
 
@@ -38,24 +42,24 @@ function one_pager_homepage_content() { ?>
 	<!-- About section -->
 	<section id="about" class="parallax">
 		<article class="wrap">
-			<h2>About Section</h2>
-			Plugins used:<br/>
-			<ol>
-				<li>Page scroll to id: for smooth scrolling when nav menu links are clicked</li>
-				<li>Portfolio Post Type: for Portfolio CPT</li>
-				<li>Display Posts Shortcode: to pull Portfolio CPT entries and showing in the above section</li>
-				<li>Dynamic To Top: to display a 'go to top' button that appears at bottom right</li>
-				<li>mobble: To load Animate.CSS, prettyPhoto, Parallax and Waypoints only on non mobiles and tables</li>
-				<li><a href="http://sridharkatakam.com/go/gravity-forms/">Gravity Forms</a>: For the contact form</li>
-			</ol>
+			<?php
+				genesis_widget_area( 'about-section', array(
+				'before'	=> '<div class="about-section widget-area">',
+				'after'		=> '</div>',
+				) );
+			?>
 		</article>
 	</section>
 
 	<!-- Contact section -->
 	<section id="contact" class="parallax">
 		<article class="wrap">
-			<h2>Contact Us</h2>
-			<?php gravity_form(1, false, false, false, '', false); ?>
+			<?php
+				genesis_widget_area( 'contact-section', array(
+				'before'	=> '<div class="contact-section widget-area">',
+				'after'		=> '</div>',
+				) );
+			?>
 		</article>
 	</section>
 

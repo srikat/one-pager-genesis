@@ -1641,9 +1641,12 @@ Media Queries
 	padding: 40px;
 }
 
-.parallax h2 {
-	font-size: 50px;
+.parallax h1, .parallax h2, .parallax h3, .parallax h4, .parallax h5, .parallax h6 {
 	color: #fff;
+}
+
+.parallax h2 {
+	font-size: 30px;
 }
 
 .parallax p:last-child {
@@ -1665,8 +1668,8 @@ Media Queries
 	margin-top: 2rem;
 }
 
-section#intro {
-	background-image: url('images/intro-background.jpg');
+section#welcome {
+	background-image: url('images/welcome-background.jpg');
 }
 
 section#portfolio {
@@ -1705,7 +1708,11 @@ a:focus {
 	background: transparent;
 }
 
-.display-posts-listing {
+#portfolio h2 {
+	text-transform: uppercase;
+}
+
+#portfolio .display-posts-listing {
 	overflow: hidden;
 	margin-top: 4rem;
 }
@@ -1742,6 +1749,10 @@ a:focus {
 
 #about h2 {
 	text-align: center;
+}
+
+#contact .wrap {
+	background: transparent;
 }
 
 @media only screen and (max-width: 1024px) {

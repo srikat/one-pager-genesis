@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-	$("#intro").backstretch("http://websitesetuppro.com/demos/single-page/wp-content/themes/genesis-sample/images/intro-background.jpg");
+	$("#welcome").backstretch("http://websitesetuppro.com/demos/single-page/wp-content/themes/genesis-sample/images/welcome-background.jpg");
 
 	$("#portfolio").backstretch("http://websitesetuppro.com/demos/single-page/wp-content/themes/genesis-sample/images/portfolio-background.jpg");
 
