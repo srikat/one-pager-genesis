@@ -1,6 +1,7 @@
 === One-Pager Genesis Child Theme ===
 
-Github project link: https://github.com/srikat/one-pager-genesis
+Live Demo: http://websitesetuppro.com/demos/one-pager-genesis/
+Blog Post: http://sridharkatakam.com/announcing-one-pager-a-one-page-parallax-website-child-theme-for-genesis/
 
 
 === Installation Instructions ===
@@ -8,7 +9,7 @@ Github project link: https://github.com/srikat/one-pager-genesis
 1. Upload the one-pager theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well)
 2. Go to your WordPress dashboard and select Appearance.
 3. Activate the One-Pager for Genesis theme.
-4. Visit [url here] for configuration
+4. Visit http://sridharkatakam.com/announcing-one-pager-a-one-page-parallax-website-child-theme-for-genesis/ for details.
 
 
 === Theme Support ===
