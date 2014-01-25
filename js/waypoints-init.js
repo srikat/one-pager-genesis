@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-	$('#intro .wrap').waypoint(function() {
+	$('#welcome .wrap').waypoint(function() {
 		$(this).toggleClass( 'animated fadeInDown' );
 	},
 	{
