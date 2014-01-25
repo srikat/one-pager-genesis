@@ -1,6 +1,6 @@
 <?php
 /**
- * This file adds the Home Page to your active theme.
+ * This file adds the Home Page to One-Pager.
  */
 
 // Force full width content layout setting
