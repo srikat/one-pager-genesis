@@ -13,4 +13,4 @@ Github project link: https://github.com/srikat/one-pager-genesis
 
 === Theme Support ===
 
-Please visit [url here] for theme support.
+Post any issues or questions at https://github.com/srikat/one-pager-genesis/issues. No guaranteed support though.
