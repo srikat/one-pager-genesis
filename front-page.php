@@ -6,12 +6,6 @@
 // Force full width content layout setting
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
-function sk_portfolio_entries() {
-
-	echo do_shortcode('[display-posts post_type="portfolio" image_size="portfolio" posts_per_page="6" wrapper="div"]');
-
-}
-
 // Remove the default Genesis loop
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
