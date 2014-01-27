@@ -3,10 +3,13 @@ add_filter( 'genesis_register_sidebar_defaults', 'one_pager_register_sidebar_def
 //* Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 
+// needed to check if a plugin is active or not, in this case mobble
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'One Pager Theme' );
 define( 'CHILD_THEME_URL', 'http://sridharkatakam.com' );
-define( 'CHILD_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_VERSION', '1.0.1' );
 
 //* Enqueue Lato Google font
 add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
@@ -57,6 +60,9 @@ function one_pager_display_posts_shortcode_output( $output, $atts, $image, $titl
 add_action( 'wp_enqueue_scripts', 'enqueue_parallax' );
 function enqueue_parallax() {
 
+	if ( ! is_plugin_active( 'mobble/mobble.php' ) )
+		return;
+
 	if ( is_handheld() )
 		return;
 
@@ -86,6 +92,9 @@ function enqueue_parallax() {
 //* Enqueue Backstretch on handhelds (tablets and mobiles) so that background images are stretched vertically to fill the sections' content
 add_action( 'wp_enqueue_scripts', 'enqueue_backstretch' );
 function enqueue_backstretch() {
+
+	if ( ! is_plugin_active( 'mobble/mobble.php' ) )
+		return;
 
 	if ( ! is_handheld() )
 		return;
