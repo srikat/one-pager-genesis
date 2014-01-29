@@ -9,7 +9,7 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'One Pager Theme' );
 define( 'CHILD_THEME_URL', 'http://sridharkatakam.com' );
-define( 'CHILD_THEME_VERSION', '1.0.1' );
+define( 'CHILD_THEME_VERSION', '1.0.2' );
 
 //* Enqueue Lato Google font
 add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
@@ -130,4 +130,54 @@ function one_pager_register_sidebar_defaults( $defaults ) {
 	$defaults['before_title'] = '<h2 class="widget-title widgettitle">';
 	$defaults['after_title'] = '</h2>';
 	return $defaults;
+}
+
+//* Register Header Right Inner Primary sidebar for use on inner pages
+genesis_register_sidebar( array(
+	'id'          => 'header-right-inner',
+	'name'        => __( 'Header Right Inner', 'one-pager' ),
+	'description' => __( 'This is the header right inner sidebar.', 'one-pager' ),
+) );
+
+//* Show Header Right Inner widget area in Header Right location on all pages other than homepage
+add_action( 'genesis_before_header', 'sk_repace_header_right_sidebar' );
+function sk_repace_header_right_sidebar() {
+
+	if( is_home() )
+		return;
+
+	remove_action( 'genesis_header', 'genesis_do_header' );
+	add_action( 'genesis_header', 'genesis_do_inner_header' );
+
+}
+
+function genesis_do_inner_header() {
+
+	genesis_markup( array(
+		'html5'   => '<div %s>',
+		'xhtml'   => '<div id="title-area">',
+		'context' => 'title-area',
+	) );
+	do_action( 'genesis_site_title' );
+	// do_action( 'genesis_site_description' );
+	echo '</div>';
+
+	genesis_markup( array(
+		'html5'   => '<aside %s>',
+		'xhtml'   => '<div class="widget-area header-widget-area">',
+		'context' => 'header-widget-area',
+	) );
+
+		do_action( 'genesis_header_right' );
+		add_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
+		add_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
+		dynamic_sidebar( 'header-right-inner' );
+		remove_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
+		remove_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
+
+	genesis_markup( array(
+		'html5' => '</aside>',
+		'xhtml' => '</div>',
+	) );
+
 }
