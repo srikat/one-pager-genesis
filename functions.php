@@ -60,9 +60,17 @@ function one_pager_display_posts_shortcode_output( $output, $atts, $image, $titl
 add_action( 'wp_enqueue_scripts', 'enqueue_parallax' );
 function enqueue_parallax() {
 
+	// load Javascript and Dashicons for mobile responsive hamburger menu.
+	// Source: http://demo.studiopress.com/beautiful/wp-content/themes/beautiful-pro/js/responsive-menu.js
+	wp_enqueue_script( 'responsive-menu',  get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+
+	wp_enqueue_style( 'dashicons' );
+
+	// if mobble is not active, bail.
 	if ( ! is_plugin_active( 'mobble/mobble.php' ) )
 		return;
 
+	// if this is a mobile device, bail.
 	if ( is_handheld() )
 		return;
 

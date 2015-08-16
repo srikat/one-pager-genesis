@@ -3,7 +3,7 @@
 	Description: This is the Single-Page theme for the Genesis Framework.
 	Author: Sridhar Katakam
 	Author URI: https://sridharkatakam.com
-	Version: 1.0.2
+	Version: 1.0.3
 
 	Tags: one-page, single-page, fixed-header, lightbox, portfolio, animations, parallax
 
@@ -1410,6 +1410,26 @@ Site Footer
 	margin-bottom: 0;
 }
 
+/* Responsive Menu
+--------------------------------------------- */
+
+.responsive-menu-icon {
+	cursor: pointer;
+	display: none;
+	margin-bottom: -1px;
+	text-align: center;
+}
+
+.responsive-menu-icon::before {
+	content: "\f333";
+	display: inline-block;
+	font: normal 20px/1 'dashicons';
+	margin: 0 auto;
+	padding: 10px;
+}
+.nav-primary .responsive-menu-icon::before {
+	color: #fff;
+}
 
 /*
 Media Queries
@@ -1669,20 +1689,20 @@ Media Queries
 }
 
 section#welcome {
-	background-image: url('images/welcome-background.jpg');
+	background-image: url(images/welcome-background.jpg);
 }
 
 section#portfolio {
-	background-image: url('images/portfolio-background.jpg');
+	background-image: url(images/portfolio-background.jpg);
 	background-color: #050505;
 }
 
 section#about {
-	background-image: url('images/about-background.jpg');
+	background-image: url(images/about-background.jpg);
 }
 
 section#contact {
-	background-image: url('images/contact-background.jpg');
+	background-image: url(images/contact-background.jpg);
 }
 
 #dynamic-to-top {
@@ -1801,6 +1821,106 @@ a:focus {
 
 }
 
+@media only screen and (max-width: 768px) {
+
+	.site-header .widget-area {
+		margin-bottom: 16px;
+	}
+
+	.menu-item a.mPS2id-highlight {
+		color: #333;
+	}
+
+	.genesis-nav-menu.responsive-menu > .menu-item > .sub-menu,
+	.genesis-nav-menu.responsive-menu {
+		display: none;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item,
+	.responsive-menu-icon {
+		display: block;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item {
+		margin: 0;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item:hover {
+		position: static;
+	}
+
+	.genesis-nav-menu.responsive-menu .current-menu-item > a,
+	.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
+	.genesis-nav-menu.responsive-menu a,
+	.genesis-nav-menu.responsive-menu a:hover {
+		background: none;
+		line-height: 1;
+		padding: 16px 20px;
+	}
+	.nav-primary .genesis-nav-menu.responsive-menu .current-menu-item > a,
+	.nav-primary .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
+	.nav-primary .genesis-nav-menu.responsive-menu a,
+	.nav-primary .genesis-nav-menu.responsive-menu a:hover {
+		color: #fff;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item-has-children {
+		cursor: pointer;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item-has-children > a {
+		margin-right: 60px;
+	}
+
+	.genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
+		content: "\f347";
+		float: right;
+		font: normal 16px/1 'dashicons';
+		height: 16px;
+		padding: 16px 20px;
+		right: 0;
+		text-align: right;
+		z-index: 9999;
+	}
+	.nav-primary .genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
+		color: #fff;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before {
+		content: "\f343";
+	}
+
+	.genesis-nav-menu.responsive-menu .sub-menu {
+		border: none;
+		left: auto;
+		opacity: 1;
+		padding-left: 25px;
+		position: relative;
+		-moz-transition:    opacity .4s ease-in-out;
+		-ms-transition:     opacity .4s ease-in-out;
+		-o-transition:      opacity .4s ease-in-out;
+		-webkit-transition: opacity .4s ease-in-out;
+		transition:         opacity .4s ease-in-out;
+		width: 100%;
+		z-index: 99;
+	}
+
+	.genesis-nav-menu.responsive-menu .sub-menu .sub-menu {
+		margin: 0;
+	}
+
+	.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
+	.genesis-nav-menu.responsive-menu .sub-menu li a,
+	.genesis-nav-menu.responsive-menu .sub-menu li a:hover {
+		background: none;
+		border: none;
+		padding: 12px 20px;
+		position: relative;
+		width: 100%;
+	}
+
+}
+
 @media only screen and (max-width: 767px) {
 
 	#portfolio .listing-item {
@@ -1810,6 +1930,14 @@ a:focus {
 
 	#portfolio .listing-item:nth-of-type(2n) {
 		margin-left: 0;
+	}
+
+}
+
+@media only screen and (max-width: 736px) {
+
+	.gform_widget .gform_wrapper .top_label input.medium {
+		width: 100%;
 	}
 
 }
@@ -1824,6 +1952,10 @@ a:focus {
 		margin-top: 0;
 	}
 
+	.gform_widget .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span {
+		width: 100%;
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -1836,10 +1968,22 @@ a:focus {
 
 }
 
+@media only screen and (max-width: 414px) {
+
+	#contact .wrap {
+		padding: 0;
+	}
+
+}
+
 @media only screen and (max-width: 320px) {
 
 	.parallax {
 		padding: 0;
+	}
+
+	#contact .wrap {
+		padding: 20px;
 	}
 
 }
