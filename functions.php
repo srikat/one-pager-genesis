@@ -33,15 +33,15 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 
 
 
-//* One-Pager specific code below
+// One-Pager specific code below
 
-//* Remove tagline from header
+// Remove tagline from header
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
-//* Add custom image size for Portfolio featured images
-add_image_size( 'portfolio', 340, 227, TRUE );
+// Add custom image size for Portfolio featured images
+add_image_size( 'portfolio', 340, 227, true );
 
-//* Customize the output of individual Portfolio entries
+// Customize the output of individual Portfolio entries
 add_filter( 'display_posts_shortcode_output', 'one_pager_display_posts_shortcode_output', 10, 9 );
 function one_pager_display_posts_shortcode_output( $output, $atts, $image, $title, $date, $excerpt, $inner_wrapper, $content, $class ) {
 
@@ -56,7 +56,7 @@ function one_pager_display_posts_shortcode_output( $output, $atts, $image, $titl
 
 }
 
-//* Enqueue Parallax on non handhelds i.e., desktops, laptops etc. and not on tablets and mobiles
+// Enqueue Parallax on non handhelds i.e., desktops, laptops etc. and not on tablets and mobiles
 add_action( 'wp_enqueue_scripts', 'enqueue_parallax' );
 function enqueue_parallax() {
 
@@ -89,7 +89,7 @@ function enqueue_parallax() {
 
 }
 
-//* Enqueue Backstretch on handhelds (tablets and mobiles) so that background images are stretched vertically to fill the sections' content
+// Enqueue Backstretch on handhelds (tablets and mobiles) so that background images are stretched vertically to fill the sections' content
 add_action( 'wp_enqueue_scripts', 'enqueue_backstretch' );
 function enqueue_backstretch() {
 
@@ -106,7 +106,7 @@ function enqueue_backstretch() {
 
 }
 
-//* Register widget areas
+// Register widget areas
 genesis_register_sidebar( array(
 	'id'          => 'welcome-section',
 	'name'        => __( 'Welcome Section', 'one-pager' ),
@@ -125,21 +125,21 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the contact section.', 'one-pager' ),
 ) );
 
-//* Change widget titles from h4 to h2
+// Change widget titles from h4 to h2
 function one_pager_register_sidebar_defaults( $defaults ) {
 	$defaults['before_title'] = '<h2 class="widget-title widgettitle">';
 	$defaults['after_title'] = '</h2>';
 	return $defaults;
 }
 
-//* Register Header Right Inner Primary sidebar for use on inner pages
+// Register Header Right Inner Primary sidebar for use on inner pages
 genesis_register_sidebar( array(
 	'id'          => 'header-right-inner',
 	'name'        => __( 'Header Right Inner', 'one-pager' ),
 	'description' => __( 'This is the header right inner sidebar.', 'one-pager' ),
 ) );
 
-//* Show Header Right Inner widget area in Header Right location on all pages other than homepage
+// Show Header Right Inner widget area in Header Right location on all pages other than homepage
 add_action( 'genesis_before_header', 'sk_repace_header_right_sidebar' );
 function sk_repace_header_right_sidebar() {
 
