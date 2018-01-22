@@ -1,5 +1,7 @@
 === One-Pager Genesis Child Theme ===
 
+Theme demo: http://one-pager-genesis.wpdemos.co/
+
 Blog Post: https://sridharkatakam.com/announcing-one-pager-one-page-parallax-website-child-theme-genesis/
 
 
