@@ -1649,7 +1649,7 @@ Media Queries
 	padding-top: 150px;
 	padding-bottom: 150px;
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 	color: #fff;
 }
 
@@ -1658,7 +1658,7 @@ Media Queries
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	padding: 40px;
+	padding: /*40px*/ 20px;
 }
 
 .parallax h1, .parallax h2, .parallax h3, .parallax h4, .parallax h5, .parallax h6 {
@@ -1720,8 +1720,8 @@ a:focus {
 }
 
 #portfolio {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top:20px /*40px*/;
+	padding-bottom:20px /*40px*/;
 }
 
 #portfolio .wrap {
@@ -1734,21 +1734,41 @@ a:focus {
 
 #portfolio .display-posts-listing {
 	overflow: hidden;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
 	margin-top: 4rem;
 }
 
 #portfolio .listing-item {
-	float: left;
-	width: 30.8176100629%; /* [main element's width - (number of columns - 1)xgap] / number of columns */
-	margin-left: 3.7735849057%; /* (gap / main element's width)x100 */
-	margin-bottom: 3rem;
+	min-width:280px;
+	flex: 1 0 30%;
 }
 
+@media only screen and (min-width: 1025px) {
+#portfolio .listing-item {
+	margin: 0 10px;
+}
+}
+@media only screen and (max-width: 1024px) {
+#portfolio .listing-item {
+	margin: 0 5px;
+}
+}
+@media only screen and (max-width: 640px) {
+#portfolio .listing-item {
+	margin: 0 5px;
+}
+}
+/*
 #portfolio .listing-item:nth-of-type(3n+1) {
 	clear: left;
 	margin-left: 0;
 }
-
+*/
 #portfolio .listing-item h3 {
 	font-weight: normal;
 	color: #fff;
@@ -1774,7 +1794,7 @@ a:focus {
 #contact .wrap {
 	background: transparent;
 }
-
+/*
 @media only screen and (max-width: 1024px) {
 
 	#portfolio .listing-item {
@@ -1796,7 +1816,7 @@ a:focus {
 	}
 
 }
-
+*/
 @media only screen and (max-width: 1023px) {
 
 	.site-inner {
@@ -1807,7 +1827,7 @@ a:focus {
 		padding: 4rem;
 	}
 }
-
+/*
 @media only screen and (max-width: 1000px) {
 
 	#portfolio .listing-item {
@@ -1820,7 +1840,7 @@ a:focus {
 	}
 
 }
-
+*/
 @media only screen and (max-width: 768px) {
 
 	.site-header .widget-area {
